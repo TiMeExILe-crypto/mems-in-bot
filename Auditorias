@@ -1,0 +1,21 @@
+import telebot
+bot= telebot.TeleBot("7593655955:AAEIxZjBUYxRRFH-rve2cNSiuOsJqQhAyEI")
+    
+@bot.message_handler(commands=['start', 'hello'])
+def send_welcome(message):
+    bot.reply_to(message, f'Привет! Я бот {bot.get_me().first_name}!')
+
+@bot.message_handler(commands=['How are you?'])
+def send_welcome(message):
+    bot.reply_to(message, f'Все хорошо,а у тебя? {bot.get_me().first_name}!')
+
+@bot.message_handler(commands=['Auditoria?'])
+def send_welcome(message):
+    bot.reply_to(message, f' Я больше люблю аудиторию которая следит за экологией. {bot.get_me().first_name}!')
+
+@bot.message_handler(commands=['Mem'])
+def send_welcome(message):
+    bot.reply_to(message, f'Ударилась лягушка о землю головой и стала девицей прекрасной. Ударилась второй раз и стала… месивом кровавым. Раз на раз не приходится….  {bot.get_me().first_name}!')
+
+
+bot.polling()
